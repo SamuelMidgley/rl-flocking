@@ -24,9 +24,5 @@ public class Shepherd : MonoBehaviour
         {
             Debug.Log("Wall");
         }
-        if (collision.TryGetComponent<Goal>(out Goal goal))
-        {
-            Debug.Log("Goal");
-        }
     }
 }
