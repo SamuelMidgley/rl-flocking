@@ -5,8 +5,12 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public FlockAgent agentPreFab;
-    List<FlockAgent> agents = new List<FlockAgent>();
+    public static List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
+
+    public static Vector3 entryPenPos;
+    public static Vector3 topPenPos;
+    public static Vector3 bottomPenPos;
 
     [Range(1, 50)]
     public int startingCount = 20;
@@ -51,10 +55,21 @@ public class Flock : MonoBehaviour
         squareStationaryRadius = stationaryRadius * stationaryRadius;
 
         agents = spawnFlock();
+
+        // Pen constraints
+        SpriteRenderer spriteRenderer = GameObject.Find("Pen").GetComponent<SpriteRenderer>();
+        Vector3 penPos = spriteRenderer.transform.localPosition;
+        Vector3 penSize = spriteRenderer.bounds.size;
+
+        entryPenPos = new Vector3(penPos.x - penSize.x / 2, 0, 0);
+        topPenPos = new Vector3(penPos.x - penSize.x/2, penSize.y/2, 0);
+        bottomPenPos = new Vector3(penPos.x - penSize.x / 2, - penSize.y / 2, 0);
+        Debug.Log(topPenPos);
+        Debug.Log(bottomPenPos);
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         if (MLShepherd.resetNames.Contains(transform.parent.name))
         {
