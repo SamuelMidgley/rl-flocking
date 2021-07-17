@@ -1,0 +1,38 @@
+{
+    "Shepherd": {
+        "checkpoints": [
+            {
+                "steps": 499965,
+                "file_path": "results\\test1.02\\Shepherd\\Shepherd-499965.onnx",
+                "reward": 9.078918246025184,
+                "creation_time": 1625752604.2857435,
+                "auxillary_file_paths": [
+                    "results\\test1.02\\Shepherd\\Shepherd-499965.pt"
+                ]
+            },
+            {
+                "steps": 500029,
+                "file_path": "results\\test1.02\\Shepherd\\Shepherd-500029.onnx",
+                "reward": 9.078918246025184,
+                "creation_time": 1625752604.3196526,
+                "auxillary_file_paths": [
+                    "results\\test1.02\\Shepherd\\Shepherd-500029.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500029,
+            "file_path": "results\\test1.02\\Shepherd.onnx",
+            "reward": 9.078918246025184,
+            "creation_time": 1625752604.3196526,
+            "auxillary_file_paths": [
+                "results\\test1.02\\Shepherd\\Shepherd-500029.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

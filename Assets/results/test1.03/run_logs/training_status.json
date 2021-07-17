@@ -1,0 +1,29 @@
+{
+    "Shepherd": {
+        "checkpoints": [
+            {
+                "steps": 326224,
+                "file_path": "results\\test1.03\\Shepherd\\Shepherd-326224.onnx",
+                "reward": 9.095848345197737,
+                "creation_time": 1625755752.438467,
+                "auxillary_file_paths": [
+                    "results\\test1.03\\Shepherd\\Shepherd-326224.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 326224,
+            "file_path": "results\\test1.03\\Shepherd.onnx",
+            "reward": 9.095848345197737,
+            "creation_time": 1625755752.438467,
+            "auxillary_file_paths": [
+                "results\\test1.03\\Shepherd\\Shepherd-326224.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
