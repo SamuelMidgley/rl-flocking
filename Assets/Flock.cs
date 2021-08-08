@@ -64,8 +64,6 @@ public class Flock : MonoBehaviour
         entryPenPos = new Vector3(penPos.x - penSize.x / 2, 0, 0);
         topPenPos = new Vector3(penPos.x - penSize.x/2, penSize.y/2, 0);
         bottomPenPos = new Vector3(penPos.x - penSize.x / 2, - penSize.y / 2, 0);
-        Debug.Log(topPenPos);
-        Debug.Log(bottomPenPos);
     }
 
         // Update is called once per frame

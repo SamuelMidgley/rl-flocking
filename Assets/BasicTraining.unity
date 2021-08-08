@@ -206,6 +206,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &651056700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1186877844534402274, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
+  m_PrefabInstance: {fileID: 1844087784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &651056702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651056700}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!850595691 &1343872431
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -290,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 1186877842767993156, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: 1800d22e666d1c246a5f13df40662f54, type: 3}
     - target: {fileID: 1186877842767993156, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: m_BehaviorName
       value: Shepherd
@@ -305,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186877842767993156, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 30
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1186877842767993156, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -317,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186877843360429259, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1186877843809003961, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: maxSpeed
@@ -325,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186877843809003961, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: startingCount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1186877843809003961, guid: f3fcaaf9d3fd1814e96b56b5d250c696, type: 3}
       propertyPath: neighborRadius

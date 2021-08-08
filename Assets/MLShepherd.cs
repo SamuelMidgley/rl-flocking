@@ -14,6 +14,7 @@ public class MLShepherd : Agent
     float innerCirclePoints = 0f;
     float numFlock;
     float prevnumFlock = 8;
+    float step = 0;
 
     public override void OnEpisodeBegin()
     {
@@ -23,6 +24,7 @@ public class MLShepherd : Agent
 
     private void Update()
     {
+        step++;
         // Heading right direction (local position)
         // maybe give percentage of reward if kinda close (NOT SURE ABOUT THIS THOUGH)
         Vector3 avgHeading = Vector3.zero;
@@ -42,12 +44,12 @@ public class MLShepherd : Agent
             avgPosition /= numFlock;
 
 
-            // Stay close
+            // Shepherd stay close to average position of flock
             float rangeDistance = 5f;
             float toFlockDistance = Vector3.Distance(transform.position, avgPosition);
-            if (toFlockDistance > rangeDistance)
+            if (1 < toFlockDistance && toFlockDistance < rangeDistance)
             {
-                AddReward(-0.01f * Mathf.Pow(rangeDistance - toFlockDistance, 2));
+                AddReward(0.00001f);
             }
 
             // Heading right direction
@@ -78,7 +80,7 @@ public class MLShepherd : Agent
 
             if (prevnumFlock < numFlock)
             {
-                AddReward(0.01f * (prevnumFlock - numFlock));
+                AddReward(1f * (prevnumFlock - numFlock));
             }
 
             prevnumFlock = numFlock;
@@ -87,7 +89,14 @@ public class MLShepherd : Agent
         if (numFlock == 0)
         {
             Debug.Log("Yay");
-            AddReward(10f);
+            AddReward(20f);
+
+            if (step < 7500)
+            {
+                Debug.Log("In time");
+                AddReward(20f);
+            }
+
             EndEpisode();
         }
     }
@@ -95,7 +104,9 @@ public class MLShepherd : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(Flock.entryPenPos);
+        sensor.AddObservation(Flock.topPenPos);
+        sensor.AddObservation(Flock.bottomPenPos);
+        //sensor.AddObservation(Flock.entryPenPos);
 
         for (int i = 0; i < Flock.agents.Count; i++)
         {
